@@ -1,0 +1,5 @@
+{
+  "name": "Resource Reserves Report",
+  "description": "A modern dashboard display of mineral resource reserves, summaries, and mining rights based on Q3 2025 data.",
+  "requestFramePermissions": []
+}
