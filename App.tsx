@@ -3,54 +3,64 @@ import { mineData, mineralSummary, saltLakeSummary, miningLicenses, explorationL
 import MineCard from './components/MineCard';
 import SummarySection from './components/SummarySection';
 import LicenseSection from './components/LicenseSection';
-import { Sparkles, Layers, Activity } from 'lucide-react';
+import { Sparkles, Layers } from 'lucide-react';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen pb-12 bg-slate-50">
-      {/* Immersive Header Background Area - Simplified & Compact */}
-      <div className="relative pt-6 pb-8 px-5 bg-white rounded-b-3xl shadow-lg shadow-slate-200/40 mb-6 overflow-hidden">
-        {/* Decorative background elements */}
-        <div className="absolute top-0 right-0 w-48 h-48 bg-blue-600/5 rounded-full blur-3xl -mr-12 -mt-12 pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 w-32 h-32 bg-indigo-600/5 rounded-full blur-2xl -ml-8 -mb-8 pointer-events-none"></div>
-
-        <div className="relative z-10 flex items-end justify-between">
-            <div>
-                <div className="flex items-center gap-2 mb-1.5 opacity-60">
-                     <span className="text-[10px] font-bold tracking-widest uppercase text-slate-500">2025 Q3 Report</span>
-                </div>
-                <h1 className="text-2xl font-black text-slate-900 tracking-tight leading-none">
-                    矿产资源 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">驾驶舱</span>
-                </h1>
-            </div>
-            <div className="bg-slate-50 px-3 py-1.5 rounded-xl border border-slate-100 flex items-center gap-1.5 shadow-sm">
-                <Activity className="w-3.5 h-3.5 text-emerald-500" />
-                <span className="text-xs font-bold text-slate-700 font-mono-nums">09.30</span>
-            </div>
-        </div>
+    <div className="min-h-screen pb-12 bg-[#f8fafc] selection:bg-blue-100 selection:text-blue-900">
+      {/* 1. Immersive Header - Simplified as requested */}
+      <div className="pt-8 pb-4 text-center relative overflow-hidden">
+         {/* Background Glow */}
+         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-lg bg-blue-100/50 blur-[60px] rounded-full pointer-events-none"></div>
+         
+         <div className="relative z-10">
+             <h1 className="text-3xl font-black text-slate-900 tracking-tight">
+                矿产资源
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 ml-2">
+                    驾驶舱
+                </span>
+             </h1>
+             <div className="h-1 w-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mx-auto mt-3 shadow-sm"></div>
+             <p className="text-[10px] text-slate-400 font-bold tracking-[0.2em] uppercase mt-2">2025 Q3 Report</p>
+         </div>
       </div>
 
-      <div className="px-4 space-y-8">
+      <div className="px-3 space-y-6 max-w-3xl mx-auto">
         
-        {/* 1. Main Resource Grid with Grand Header Style */}
-        <section>
-             {/* Header - Badge removed as requested */}
-            <div className="relative rounded-t-2xl overflow-hidden shadow-md bg-gradient-to-r from-blue-600 to-cyan-600 p-4 flex items-center justify-between">
-                <div className="absolute inset-0 opacity-10" style={{backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '16px 16px'}}></div>
-                <div className="relative z-10 flex items-center gap-3">
-                    <div className="p-2 bg-white/20 backdrop-blur-sm rounded-lg shadow-inner">
-                        <Layers className="w-5 h-5 text-white opacity-90" />
+        {/* 1. Main Resource Grid */}
+        <section className="transform transition-all">
+             {/* Header - Updated to Deep Indigo/Blue Gradient (No longer black) */}
+            <div className={`
+                relative rounded-t-2xl overflow-hidden shadow-lg z-10
+                bg-gradient-to-r from-indigo-900 via-blue-800 to-indigo-900 border-b border-indigo-500/30
+                p-4 flex items-center justify-between
+            `}>
+                 {/* Pattern Overlay */}
+                 <div className="absolute inset-0 opacity-20" 
+                      style={{
+                          backgroundImage: `radial-gradient(circle at 2px 2px, rgba(255,255,255,0.8) 1px, transparent 0)`,
+                          backgroundSize: '20px 20px'
+                      }} 
+                 ></div>
+
+                <div className="relative z-10 flex items-center gap-4">
+                    <div className="p-2 rounded-xl backdrop-blur-md border shadow-inner bg-indigo-500/20 text-indigo-200 border-indigo-400/20">
+                        <Layers className="w-5 h-5 text-indigo-100" />
                     </div>
                     <div>
-                        <h3 className="text-lg font-black text-white tracking-wide">25年第三季度末保有资源量</h3>
-                        <p className="text-[10px] text-white/80 font-medium uppercase tracking-wider">Core Assets</p>
+                        <h3 className="text-lg font-black text-white tracking-wide drop-shadow-md">25年第三季度末保有资源量</h3>
                     </div>
                 </div>
             </div>
 
             {/* Body Container */}
-            <div className="bg-slate-50/50 rounded-b-2xl border-x border-b border-slate-200 shadow-sm p-3 md:p-4">
-                <div className="grid grid-cols-2 gap-3 md:gap-4">
+            <div className="bg-white rounded-b-2xl border-x border-b border-slate-200 shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-4 sm:p-5 relative overflow-hidden">
+                {/* Subtle grid background */}
+                <div className="absolute inset-0 opacity-[0.02] pointer-events-none" 
+                     style={{backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)', backgroundSize: '24px 24px'}}>
+                </div>
+
+                <div className="grid grid-cols-2 gap-3 relative z-10">
                     {mineData.map((mine) => (
                         <MineCard key={mine.id} data={mine} />
                     ))}
@@ -73,14 +83,14 @@ const App: React.FC = () => {
         />
 
         {/* 4. Licenses */}
-        <section className="space-y-8">
+        <section className="space-y-6">
             <LicenseSection group={miningLicenses} />
             <LicenseSection group={explorationLicenses} />
         </section>
 
-        <footer className="pt-4 pb-8 text-center">
-            <div className="inline-flex items-center gap-2 text-slate-400 text-[10px] font-bold tracking-widest uppercase opacity-50">
-                <Sparkles className="w-3 h-3" />
+        <footer className="pt-6 pb-8 text-center">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-400 text-[10px] font-bold tracking-widest uppercase opacity-70">
+                <Sparkles className="w-3 h-3 text-indigo-400" />
                 <span>Resource Intelligence</span>
             </div>
         </footer>
