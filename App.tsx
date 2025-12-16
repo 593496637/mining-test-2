@@ -17,7 +17,7 @@ const App: React.FC = () => {
              <h1 className="text-3xl font-black text-slate-900 tracking-tight">
                 矿产资源
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 ml-2">
-                    驾驶舱
+                    数据概览
                 </span>
              </h1>
              <div className="h-1 w-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mx-auto mt-3 shadow-sm"></div>
